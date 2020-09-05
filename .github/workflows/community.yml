@@ -17,8 +17,8 @@ jobs:
       - uses: actions/first-interaction@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: '# Congratulations :tada:\nThis is your first **Issue**! Welcome to the community :nerd:'
-          pr-message: '# Congratulations :tada:\nThis is your first **Pull Request**! Welcome to the community :nerd:'
+          issue-message: '<h1>Congratulations :tada:</h1>This is your first <strong>Issue</strong>! Welcome to the community :nerd_face:'
+          pr-message: '<h1>Congratulations :tada:</h1>This is your first <strong>Pull Request</strong>! Welcome to the community :nerd_face:'
 
   stats:
     runs-on: ubuntu-latest
