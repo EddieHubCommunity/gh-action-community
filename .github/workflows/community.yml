@@ -13,6 +13,6 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: '# Congratulations :tada:\nThis is your first **Issue**! Welcome to the community :nerd:'
           pr-message: '# Congratulations :tada:\nThis is your first **Pull Request**! Welcome to the community :nerd:'
-      - uses: EddieJaoudeCommunity/gh-action-community@main
+      - uses: EddieJaoudeCommunity/gh-action-community@v0.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
