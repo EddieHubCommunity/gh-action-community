@@ -3,10 +3,11 @@ const github = require('@actions/github');
 
 (async () => {
   try {
-    // const githubSecret = core.getInput('github-secret');
+    const githubSecret = core.getInput('github-secret', { required: true });
+    const client = new github.GitHub(githubSecret);
 
     const creator = github.context.payload.sender.login;
-    const opts = github.context.repo.issues.listForRepo.endpoint.merge({
+    const opts = client.issues.listForRepo({
       ...github.context.issue,
       creator,
       state: 'all',
