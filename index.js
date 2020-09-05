@@ -3,7 +3,7 @@ const github = require('@actions/github');
 
 (async () => {
   try {
-    const githubSecret = core.getInput('github-secret', { required: true });
+    const githubSecret = core.getInput('github-token', { required: true });
     const client = new github.GitHub(githubSecret);
 
     const creator = github.context.payload.sender.login;
