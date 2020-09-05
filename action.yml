@@ -1,0 +1,9 @@
+name: 'Eddie Jaoude Community Action'
+description: 'Welcome first timers and maybe some badges'
+inputs:
+  github-token:
+    description: 'repo access'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
