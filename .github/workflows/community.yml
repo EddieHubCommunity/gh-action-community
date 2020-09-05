@@ -26,4 +26,4 @@ jobs:
       - uses: EddieJaoudeCommunity/gh-action-community@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          firebase-ket: ${{ secrets.FIREBASE_KEY }}
+          firebase-key: ${{ secrets.FIREBASE_KEY }}
