@@ -17,7 +17,7 @@ const admin = require('firebase-admin');
     const docRef = db.collection('usersGitHub').doc(author.id.toString());
     await docRef.set({
       ...author,
-      type: admin.firestore.FieldValue.increment(1)
+      [type]: admin.firestore.FieldValue.increment(1)
     }, { merge: true });
   } catch (error) {
     core.setFailed(error.message);
