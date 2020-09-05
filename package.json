@@ -19,6 +19,7 @@
   "homepage": "https://github.com/EddieJaoudeCommunity/gh-action-community#readme",
   "dependencies": {
     "@actions/core": "^1.2.5",
-    "@actions/github": "^4.0.0"
+    "@actions/github": "^4.0.0",
+    "firebase-admin": "^9.1.1"
   }
 }
