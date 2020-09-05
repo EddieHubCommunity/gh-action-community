@@ -6,7 +6,7 @@ const github = require('@actions/github');
     // const githubSecret = core.getInput('github-secret');
 
     const creator = github.context.payload.sender.login;
-    const opts = github.issues.listForRepo.endpoint.merge({
+    const opts = github.context.issues.listForRepo.endpoint.merge({
       ...github.context.issue,
       creator,
       state: 'all',
