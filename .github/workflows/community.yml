@@ -23,7 +23,7 @@ jobs:
   stats:
     runs-on: ubuntu-latest
     steps:
-      - uses: EddieJaoudeCommunity/gh-action-community@eddiejaoude-issue-18
+      - uses: EddieJaoudeCommunity/gh-action-community@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           firebase-ket: ${{ secrets.FIREBASE_KEY }}
