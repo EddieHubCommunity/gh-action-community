@@ -11,3 +11,5 @@ jobs:
       - uses: EddieJaoudeCommunity/gh-action-community@main
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
+          repo: github
+          context: context

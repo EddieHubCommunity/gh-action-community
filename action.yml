@@ -4,6 +4,12 @@ inputs:
   github-token:
     description: 'repo access'
     required: true
+  repo:
+    description: 'repo info'
+    required: true
+  context:
+    description: 'context of repo'
+    required: true
 runs:
   using: 'node12'
   main: 'index.js'

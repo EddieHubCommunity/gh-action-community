@@ -1,20 +1,22 @@
-const core = require("@actions/core");
-const github = require("@actions/github");
+const core = require('@actions/core');
+const github = require('@actions/github');
 
 (async () => {
   try {
-    // const githubSecret = core.getInput("github-secret");
+    // const githubSecret = core.getInput('github-secret');
+    const repo = core.getInput('repo');
+    const context = core.getInput('context');
 
-    const creator = github.context.payload.sender.login;
-    const opts = github.issues.listForRepo.endpoint.merge({
-      ...github.context.issue,
+    const creator = context.payload.sender.login;
+    const opts = repo.issues.listForRepo.endpoint.merge({
+      ...context.issue,
       creator,
-      state: "all",
+      state: 'all',
     });
-    const issues = await github.paginate(opts);
+    const issues = await repo.paginate(opts);
 
     for (const issue of issues) {
-      if (issue.number === github.context.issue.number) {
+      if (issue.number === context.issue.number) {
         continue;
       }
 
@@ -23,11 +25,11 @@ const github = require("@actions/github");
       }
     }
 
-    await github.issues.createComment({
+    await repo.issues.createComment({
       issue_number: github.context.issue.number,
-      owner: github.context.repo.owner,
-      repo: github.context.repo.repo,
-      body: "Welcome, new contributor!",
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      body: 'Welcome, new contributor!',
     });
   } catch (error) {
     core.setFailed(error.message);
