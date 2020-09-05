@@ -5,16 +5,16 @@ const github = require('@actions/github');
   try {
     // const githubSecret = core.getInput('github-secret');
 
-    const creator = context.payload.sender.login;
+    const creator = github.context.payload.sender.login;
     const opts = github.issues.listForRepo.endpoint.merge({
-      ...context.issue,
+      ...github.context.issue,
       creator,
       state: 'all',
     });
     const issues = await github.paginate(opts);
 
     for (const issue of issues) {
-      if (issue.number === context.issue.number) {
+      if (issue.number === github.context.issue.number) {
         continue;
       }
 
@@ -25,8 +25,8 @@ const github = require('@actions/github');
 
     await repo.issues.createComment({
       issue_number: github.context.issue.number,
-      owner: context.github.owner,
-      repo: context.github.repo,
+      owner: github.context.github.owner,
+      repo: github.context.github.repo,
       body: 'Welcome, new contributor!',
     });
   } catch (error) {
