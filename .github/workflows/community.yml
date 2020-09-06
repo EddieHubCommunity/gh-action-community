@@ -16,6 +16,7 @@ jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - uses: ./src/welcome
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -25,6 +26,7 @@ jobs:
   statistics:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - uses: ./src/statistics
         if: ${{ github.repository_owner == 'EddieJaoudeCommunity' }}
         with:
