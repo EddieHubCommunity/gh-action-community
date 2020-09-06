@@ -27,6 +27,5 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: ./src/statistics
-        if: ${{ github.repository_owner == 'EddieJaoudeCommunity' }}
         with:
           firebase-key: ${{ secrets.FIREBASE_KEY }}
