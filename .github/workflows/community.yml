@@ -11,14 +11,14 @@ on:
     types: [ created ]
 
 jobs:
-  welcome: "<h1>It's great having you contribute to this project</h1> Feel free to raise an issue and create a Pull request. Welcome to the community :nerd_face: If any questions please ask in [Discord](https://discord.com/invite/jZQs6Wu)"
+  welcome:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/first-interaction@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: '<h1>Congratulations :tada:</h1>This is your first <strong>Issue</strong>! Welcome to the community :nerd_face:'
-          pr-message: '<h1>Congratulations :tada:</h1>This is your first <strong>Pull Request</strong>! Welcome to the community :nerd_face:'
+          issue-message: "<h1>It's great having you contribute to this project</h1> Feel free to raise an <strong>Issue</strong>! Welcome to the community :nerd_face: If any questions please ask in [Discord](https://discord.com/invite/jZQs6Wu)"
+          pr-message: "<h1>It's great having you contribute to this project</h1> Feel free to create a <strong>Pull Request</strong>! Welcome to the community :nerd_face: If any questions please ask in [Discord](https://discord.com/invite/jZQs6Wu)"
 
   stats:
     runs-on: ubuntu-latest
