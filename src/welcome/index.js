@@ -21,7 +21,7 @@ const github = require('@actions/github');
       await client.issues.createComment({
         owner: context.issue.owner,
         repo: context.issue.repo,
-        issue_number: contextissue.number,
+        issue_number: context.issue.number,
         body: issueMessage
       });
     } else {
