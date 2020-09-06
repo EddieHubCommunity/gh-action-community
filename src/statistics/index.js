@@ -6,6 +6,7 @@ const admin = require('firebase-admin');
   try {
     const firebaseKey = core.getInput('firebase-key', { required: true });
 
+    // save statistics to db
     admin.initializeApp({
       credential: admin.credential.cert(JSON.parse(firebaseKey)),
     });
@@ -15,11 +16,14 @@ const admin = require('firebase-admin');
     const type = process.env.GITHUB_EVENT_NAME;
 
     const docRef = db.collection('usersGitHub').doc(author.id.toString());
-    await docRef.set({
-      author,
-      id: author.id.toString(),
-      [type]: admin.firestore.FieldValue.increment(1),
-    }, { merge: true });
+    await docRef.set(
+      {
+        author,
+        id: author.id.toString(),
+        [type]: admin.firestore.FieldValue.increment(1),
+      },
+      { merge: true }
+    );
   } catch (error) {
     core.setFailed(error.message);
   }
