@@ -1,0 +1,9 @@
+name: 'Eddie Jaoude Community Welcome Action'
+description: 'Welcome message on new Issues and Pull Requests'
+inputs:
+  github-token:
+    description: 'GitHub token for repo'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'

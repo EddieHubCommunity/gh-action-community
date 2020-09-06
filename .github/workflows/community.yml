@@ -14,18 +14,16 @@ jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
-      - uses: EddieJaoudeCommunity/gh-action-community@develop
-        if: ${{ github.repository_owner == 'EddieJaoudeCommunity' }}
+      - uses: ./src/welcome
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: '<h1>Congratulations :tada:</h1>This is your first <strong>Issue</strong>! Welcome to the community :nerd_face:'
           pr-message: '<h1>Congratulations :tada:</h1>This is your first <strong>Pull Request</strong>! Welcome to the community :nerd_face:'
 
-  stats:
+  statistics:
     runs-on: ubuntu-latest
     steps:
-      - uses: EddieJaoudeCommunity/gh-action-community@develop
+      - uses: ./src/statistics
         if: ${{ github.repository_owner == 'EddieJaoudeCommunity' }}
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           firebase-key: ${{ secrets.FIREBASE_KEY }}
