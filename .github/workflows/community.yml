@@ -14,7 +14,7 @@ jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
-      - uses: EddieJaoudeCommunity/gh-action-community@main
+      - uses: EddieJaoudeCommunity/gh-action-community@develop
         if: ${{ github.repository_owner == 'EddieJaoudeCommunity' }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -24,7 +24,7 @@ jobs:
   stats:
     runs-on: ubuntu-latest
     steps:
-      - uses: EddieJaoudeCommunity/gh-action-community@main
+      - uses: EddieJaoudeCommunity/gh-action-community@develop
         if: ${{ github.repository_owner == 'EddieJaoudeCommunity' }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
