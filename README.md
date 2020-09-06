@@ -7,3 +7,6 @@ GitHub Action for the Community - from welcoming first timers to badges!
 - Replies to new Issues and Pull Requests
 - Logs statistics of user activity
   
+## Usage
+
+Coming soon
