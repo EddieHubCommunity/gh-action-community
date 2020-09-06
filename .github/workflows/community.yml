@@ -1,5 +1,5 @@
 on:
-  fork
+  fork:
   push:
     branches: [ develop ]
   issues:
