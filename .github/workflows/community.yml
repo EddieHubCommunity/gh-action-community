@@ -24,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: EddieJaoudeCommunity/gh-action-community@main
+        if: ${{ github.repository_owner == 'EddieJaoudeCommunity' }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           firebase-key: ${{ secrets.FIREBASE_KEY }}
