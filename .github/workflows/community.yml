@@ -19,8 +19,8 @@ jobs:
       - uses: ./src/welcome
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: '<h1>It\'s great having you contribute to this project</h1> Feel free to raise an <strong>Issue</strong>! Welcome to the community :nerd_face: If any questions please ask in <a href="https://discord.com/invite/jZQs6Wu" target="_blank">Discord</a>'
-          pr-message: '<h1>It\'s great having you contribute to this project</h1> Feel free to create a <strong>Pull Request</strong>! Welcome to the community :nerd_face: If any questions please ask in <a href="https://discord.com/invite/jZQs6Wu" target="_blank">Discord</a>'
+          issue-message: '<h1>It''s great having you contribute to this project</h1> Feel free to raise an <strong>Issue</strong>! Welcome to the community :nerd_face: If any questions please ask in <a href="https://discord.com/invite/jZQs6Wu" target="_blank">Discord</a>'
+          pr-message: '<h1>It''s great having you contribute to this project</h1> Feel free to create a <strong>Pull Request</strong>! Welcome to the community :nerd_face: If any questions please ask in <a href="https://discord.com/invite/jZQs6Wu" target="_blank">Discord</a>'
 
   statistics:
     runs-on: ubuntu-latest
