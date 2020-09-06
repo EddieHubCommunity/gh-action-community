@@ -9,7 +9,7 @@ const github = require('@actions/github');
 
     // add a comment to the issue or pull request
     // @TODO: with a markdown sheild / badge
-    const client = new github.GitHub(githubToken);
+    const client = github.getOctokit(githubToken);
     const context = github.context;
 
     if (context.payload.action !== 'opened') {
