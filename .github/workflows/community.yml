@@ -12,6 +12,7 @@ on:
     types: [ created ]
 
 jobs:
+
   welcome:
     runs-on: ubuntu-latest
     steps:
