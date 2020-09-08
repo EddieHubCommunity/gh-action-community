@@ -1,0 +1,17 @@
+name: 'Eddie Jaoude Community Welcome Action'
+description: 'Welcome message on new Issues and Pull Requests'
+inputs:
+  github-token:
+    description: 'GitHub token for repo'
+    required: true
+  issue-message:
+    description: 'Message to reply to new issue as a comment'
+    required: true
+    default: 'Thank you for creating an Issue and contributing to our community project :tada:. Someone from the community will get back to you soon, usually within 24 hours'
+  pr-message:
+    description: 'Message to reply to new pull request as a comment'
+    required: true
+    default: 'Thank you for creating a Pull Request and contributing to our community project :tada:. Someone from the community will get back to you soon, usually within 24 hours'
+runs:
+  using: 'node12'
+  main: 'index.js'

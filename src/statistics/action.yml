@@ -1,0 +1,9 @@
+name: 'Eddie Jaoude Community Statistic Action'
+description: 'Record community activity to be used for badges'
+inputs:
+  firebase-key:
+    description: 'Firebase key'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
