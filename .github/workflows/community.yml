@@ -20,8 +20,8 @@ jobs:
       - uses: ./src/welcome
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: '<h1>It''s great having you contribute to this project</h1> Welcome to the community :nerd_face: If any questions please ask'
-          pr-message: '<h1>It''s great having you contribute to this project</h1> Welcome to the community :nerd_face: If any questions please ask'
+          issue-message: '<h1>It''s great having you contribute to this project</h1> <p>Welcome to the community :nerd_face: If any questions please ask</p>'
+          pr-message: '<h1>It''s great having you contribute to this project</h1> <p>Welcome to the community :nerd_face: If any questions please ask</p>'
 
   statistics:
     runs-on: ubuntu-latest
