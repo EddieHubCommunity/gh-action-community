@@ -1,4 +1,4 @@
-name: 'Eddie Jaoude Community Statistic Action'
+name: 'EddieHubCommunity Statistic Action'
 description: 'Record community activity to be used for badges'
 inputs:
   firebase-key:
