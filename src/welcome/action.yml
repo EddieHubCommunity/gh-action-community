@@ -1,4 +1,4 @@
-name: 'Eddie Jaoude Community Welcome Action'
+name: 'EddieHubCommunity Welcome Action'
 description: 'Welcome message on new Issues and Pull Requests'
 inputs:
   github-token:

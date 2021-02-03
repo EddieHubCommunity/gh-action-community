@@ -22,7 +22,7 @@ Example usage (you can change the replies for `issue-message` and `pr-message`)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: EddieJaoudeCommunity/gh-action-community/src/welcome@main
+      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: '<h1>It''s great having you contribute to this project</h1> Feel free to raise an <strong>Issue</strong>! Welcome to the community :nerd_face:'
@@ -38,7 +38,7 @@ This GitHub Action will log statistics of user activity to Firestore DB (Firebas
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: EddieJaoudeCommunity/gh-action-community/src/statistics@main
+      - uses: EddieHubCommunity/gh-action-community/src/statistics@main
         if: ${{ <expression> }}
         with:
           firebase-key: ${{ secrets.FIREBASE_KEY }}
