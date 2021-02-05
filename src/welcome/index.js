@@ -6,6 +6,7 @@ const github = require('@actions/github');
     const githubToken = core.getInput('github-token', { required: true });
     const issueMessage = core.getInput('issue-message');
     const prMessage = core.getInput('pr-message');
+    const prFooter = core.getInput('footer');
 
     // add a comment to the issue or pull request
     // @TODO: with a markdown sheild / badge
