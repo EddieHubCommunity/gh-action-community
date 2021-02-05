@@ -18,7 +18,7 @@ const github = require('@actions/github');
       return;
     }
 
-    const footer = `<p>' + prFooter + '</p>`;
+    const footer = `<p>` + prFooter + `</p>`;
 
     if (!!context.payload.issue) {
       await client.issues.createComment({
