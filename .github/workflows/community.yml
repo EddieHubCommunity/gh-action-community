@@ -22,6 +22,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: '<h1>It''s great having you contribute to this project</h1> <p>Welcome to the community :nerd_face: If any questions please ask</p>'
           pr-message: '<h1>It''s great having you contribute to this project</h1> <p>Welcome to the community :nerd_face: If any questions please ask</p>'
+          footer: 'Join our Discord and GitHub Organisation'
 
   statistics:
     runs-on: ubuntu-latest
