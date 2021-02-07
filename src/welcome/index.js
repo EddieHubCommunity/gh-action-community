@@ -18,21 +18,21 @@ const github = require('@actions/github');
       return;
     }
 
-    const footer = `<p>footer</p>`;
+    const footerTags = `<p>${footer}</p>`;
 
     if (!!context.payload.issue) {
       await client.issues.createComment({
         owner: context.issue.owner,
         repo: context.issue.repo,
         issue_number: context.issue.number,
-        body: issueMessage + footer
+        body: issueMessage + footerTags
       });
     } else {
       await client.pulls.createReview({
         owner: context.issue.owner,
         repo: context.issue.repo,
         pull_number: context.issue.number,
-        body: prMessage + footer,
+        body: prMessage + footerTags,
         event: 'COMMENT'
       });
     }
