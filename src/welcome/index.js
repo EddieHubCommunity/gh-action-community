@@ -6,6 +6,7 @@ const github = require('@actions/github');
     const githubToken = core.getInput('github-token', { required: true });
     const issueMessage = core.getInput('issue-message');
     const prMessage = core.getInput('pr-message');
+    const footer = core.getInput('footer');
 
     // add a comment to the issue or pull request
     // @TODO: with a markdown sheild / badge
@@ -17,22 +18,21 @@ const github = require('@actions/github');
       return;
     }
 
-    const footer = `<p>If you would like to continue contributing to open source and would like to do it with an awesome inclusive community, you should join our <a href="https://discord.com/invite/jZQs6Wu">Discord</a> chat and our <a href="https://github.com/EddieJaoudeCommunity">GitHub Organisation</a> - we help and encourage each other to contribute to open source little and often 🤓 . Any questions let us know.</p>
-      `;
+    const footerTags = `<p>${footer}</p>`;
 
     if (!!context.payload.issue) {
       await client.issues.createComment({
         owner: context.issue.owner,
         repo: context.issue.repo,
         issue_number: context.issue.number,
-        body: issueMessage + footer
+        body: issueMessage + footerTags
       });
     } else {
       await client.pulls.createReview({
         owner: context.issue.owner,
         repo: context.issue.repo,
         pull_number: context.issue.number,
-        body: prMessage + footer,
+        body: prMessage + footerTags,
         event: 'COMMENT'
       });
     }
