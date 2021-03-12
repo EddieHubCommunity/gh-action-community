@@ -1,0 +1,17 @@
+name: <NAME> on Medium
+on:
+  schedule:
+    # Runs every hour
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update-readme-with-articles:
+    name: My Medium Articles
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: gautamkrishnar/blog-post-workflow@1.2.5
+        with:
+          comment_tag_name: "ARTICLES"
+          feed_list: "https://medium.com/feed/@<YOUR USER NAME>"
