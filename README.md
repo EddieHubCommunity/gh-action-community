@@ -26,7 +26,7 @@ Example usage (you can change the replies for `issue-message` and `pr-message`)
   welcome:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@main
       - uses: EddieHubCommunity/gh-action-community/src/welcome@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -46,7 +46,7 @@ This GitHub Action will log statistics of user activity to Firestore DB (Firebas
   statistics:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@main
       - uses: EddieHubCommunity/gh-action-community/src/statistics@main
         if: ${{ <expression> }}
         with:
