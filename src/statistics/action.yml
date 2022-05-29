@@ -1,9 +1,12 @@
 name: 'EddieHubCommunity Statistic Action'
 description: 'Record community activity to be used for badges'
 inputs:
-  firebase-key:
-    description: 'Firebase key'
+  api-key:
+    description: 'Key for authenticating against the API'
+    required: true
+  api-url:
+    description: 'URL of the API'
     required: true
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
