@@ -14,7 +14,7 @@ const axios = require("axios").default;
     const type = process.env.GITHUB_EVENT_NAME;
 
     const body = {
-      githubUsername: author,
+      githubUsername: author.login,
       event: type,
     };
     try {
