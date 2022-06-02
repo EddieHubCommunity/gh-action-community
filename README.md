@@ -12,6 +12,11 @@ These GitHub Actions will:
 
 You can use 1 or all of these GitHub Actions.
 
+To create a GitHub Action
+1. In the folder `.github/workflows/`
+2. Create a file `welcome.yaml` (or another name you prefer)
+3. Add the Action config
+
 ### Welcoming message
 
 This GitHub Action will reply to all new **Issues** and **Pull Requests** with a custom message
@@ -45,5 +50,8 @@ This GitHub Action will log statistics of user activity to Firestore DB (Firebas
       - uses: EddieHubCommunity/gh-action-community/src/statistics@main
         if: ${{ <expression> }}
         with:
-          firebase-key: ${{ secrets.FIREBASE_KEY }}
+          api-key: ${{ secrets.API_TOKEN }}
+          api-url: ${{ secrets.API_URI }}
 ```
+
+Here is a complete example https://github.com/EddieHubCommunity/LinkFree/blob/main/.github/workflows/community.yml
