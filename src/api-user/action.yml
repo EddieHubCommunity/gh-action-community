@@ -1,6 +1,9 @@
 name: 'EddieHubCommunity User Creation'
 description: 'Create community user so that activity can be recorded'
 inputs:
+  repo-token:
+    description: 'Your GitHub Action temporary secret'
+    required: true
   api-key:
     description: 'Key for authenticating against the API'
     required: true
@@ -10,4 +13,3 @@ inputs:
 runs:
   using: 'node16'
   main: 'index.js'
-  
