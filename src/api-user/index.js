@@ -4,6 +4,7 @@ const axios = require("axios").default;
 
 (async () => {
   try {
+    const { payload } = github.context;
     const apiKey = core.getInput("api-key", { required: true });
     const apiURL = core.getInput("api-url", { required: true });
     const repoToken = core.getInput('repo-token', { required: true });
