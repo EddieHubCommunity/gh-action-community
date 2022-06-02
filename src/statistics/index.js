@@ -23,7 +23,7 @@ const axios = require("axios").default;
         headers: { ...authHeader },
       });
     } catch (e) {
-      console.log(e.data)
+      console.log(e.response.data)
     }
   } catch (error) {
     core.setFailed(error.message);
