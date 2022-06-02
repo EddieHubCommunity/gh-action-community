@@ -18,10 +18,13 @@ const axios = require("axios").default;
       event: type,
     };
     try {
+      console.log(body);
       await axios.post(apiURL, body, {
         headers: { ...authHeader },
       });
-    } catch (e) {}
+    } catch (e) {
+      console.log(e)
+    }
   } catch (error) {
     core.setFailed(error.message);
   }
