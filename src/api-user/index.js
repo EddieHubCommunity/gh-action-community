@@ -5,9 +5,10 @@ const axios = require("axios").default;
 (async () => {
   try {
     const { payload } = github.context;
+    const labels = ["EddieHub-API-add", "EddieHub-API-delete"];
     const apiKey = core.getInput("api-key", { required: true });
     const apiURL = core.getInput("api-url", { required: true });
-    const repoToken = core.getInput('repo-token', { required: true });
+    const repoToken = core.getInput("repo-token", { required: true });
     const client = github.getOctokit(repoToken);
     const currentLabel = payload.label.name;
 
@@ -17,29 +18,33 @@ const axios = require("axios").default;
       githubUsername: author.login,
     };
 
-    
-    if (currentLabel === 'EddieHub-API-add') {
+    if (labels.includes(currentLabel)) {
       try {
         console.log(body);
-        await axios.post(apiURL, body, {
-          headers: { ...authHeader },
-        });
-        
+        if (currentLabel === "EddieHub-API-add") {
+          await axios.post(apiURL, body, {
+            headers: { ...authHeader },
+          });
+        } else {
+          await axios.delete(`${apiURL}/${author}`, {
+            headers: { ...authHeader },
+          });
+        }
         await client.issues.createComment({
           owner: payload.repository.owner.login,
           repo: payload.repository.name,
           issue_number: payload.issue.number,
-          body: 'You have been ADDED to the EddieHub API',
+          body: "You have been ADDED to the EddieHub API",
         });
 
         await client.issues.update({
           owner: payload.repository.owner.login,
           repo: payload.repository.name,
           issue_number: payload.issue.number,
-          state: 'closed',
+          state: "closed",
         });
       } catch (e) {
-        console.log(e.response.data)
+        console.log(e.response.data);
       }
     }
   } catch (error) {
