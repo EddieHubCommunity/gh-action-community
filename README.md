@@ -50,7 +50,8 @@ This GitHub Action will log statistics of user activity to Firestore DB (Firebas
       - uses: EddieHubCommunity/gh-action-community/src/statistics@main
         if: ${{ <expression> }}
         with:
-          firebase-key: ${{ secrets.FIREBASE_KEY }}
+          api-key: ${{ secrets.API_TOKEN }}
+          api-url: ${{ secrets.API_URI }}
 ```
 
 Here is a complete example https://github.com/EddieHubCommunity/LinkFree/blob/main/.github/workflows/community.yml
