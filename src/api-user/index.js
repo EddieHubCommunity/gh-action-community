@@ -30,12 +30,21 @@ const axios = require("axios").default;
             headers: { ...authHeader },
           });
         }
-        await client.issues.createComment({
-          owner: payload.repository.owner.login,
-          repo: payload.repository.name,
-          issue_number: payload.issue.number,
-          body: "You have been ADDED to the EddieHub API",
-        });
+        if (currentLabel === "EddieHub-API-add") {
+          await client.issues.createComment({
+            owner: payload.repository.owner.login,
+            repo: payload.repository.name,
+            issue_number: payload.issue.number,
+            body: "You have been ADDED to the EddieHub API",
+          });
+        } else {
+          await client.issues.createComment({
+            owner: payload.repository.owner.login,
+            repo: payload.repository.name,
+            issue_number: payload.issue.number,
+            body: "You have been REMOVED from the EddieHub API",
+          });
+        }
 
         await client.issues.update({
           owner: payload.repository.owner.login,
