@@ -1,4 +1,13 @@
-# 2.0.0 (2022-06-02)
+# [2.1.0](https://github.com/EddieJaoudeCommunity/gh-action-community/compare/v2.0.0...v2.1.0) (2022-06-03)
+
+
+### Features
+
+* add opt-out ([#91](https://github.com/EddieJaoudeCommunity/gh-action-community/issues/91)) ([1bc1f02](https://github.com/EddieJaoudeCommunity/gh-action-community/commit/1bc1f02b15a1e530ea9ba414892d52a4ba65bc23))
+
+
+
+# [2.0.0](https://github.com/EddieJaoudeCommunity/gh-action-community/compare/bd3d3e3efb6ab4f18bbf5c7e7152deb4392e0441...v2.0.0) (2022-06-02)
 
 
 ### Bug Fixes
