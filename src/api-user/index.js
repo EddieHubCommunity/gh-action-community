@@ -25,19 +25,19 @@ const axios = require("axios").default;
           await axios.post(apiURL, body, {
             headers: { ...authHeader },
           });
-        } else {
-          await axios.delete(`${apiURL}/${author}`, {
-            headers: { ...authHeader },
-          });
-        }
-        if (currentLabel === "EddieHub-API-add") {
+
           await client.issues.createComment({
             owner: payload.repository.owner.login,
             repo: payload.repository.name,
             issue_number: payload.issue.number,
             body: "You have been ADDED to the EddieHub API",
           });
-        } else {
+        }
+        if (currentLabel === "EddieHub-API-delete") {
+          await axios.delete(`${apiURL}/${author}`, {
+            headers: { ...authHeader },
+          });
+
           await client.issues.createComment({
             owner: payload.repository.owner.login,
             repo: payload.repository.name,
