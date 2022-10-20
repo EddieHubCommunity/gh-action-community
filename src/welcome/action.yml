@@ -16,5 +16,5 @@ inputs:
     description: 'Append issue and pull request message with this message'
     default: ''
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
