@@ -1,3 +1,12 @@
+## [2.1.1](https://github.com/EddieJaoudeCommunity/gh-action-community/compare/v2.1.0...v2.1.1) (2024-05-10)
+
+
+### Bug Fixes
+
+* update to node20 ([#101](https://github.com/EddieJaoudeCommunity/gh-action-community/issues/101)) ([93cbb8a](https://github.com/EddieJaoudeCommunity/gh-action-community/commit/93cbb8af3f943e9ed01b3d180cd99f9764076aad))
+
+
+
 # [2.1.0](https://github.com/EddieJaoudeCommunity/gh-action-community/compare/v2.0.0...v2.1.0) (2022-06-03)
 
 
